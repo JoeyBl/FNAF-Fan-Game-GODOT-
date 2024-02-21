@@ -1,0 +1,443 @@
+[gd_scene load_steps=20 format=3 uid="uid://d1f08anna61ou"]
+
+[ext_resource type="Script" path="res://locationManager.gd" id="1_scwfm"]
+[ext_resource type="PackedScene" uid="uid://5pywgxskfnwb" path="res://Location.tscn" id="2_f6v5x"]
+[ext_resource type="PackedScene" uid="uid://bja38uc4b31b6" path="res://ClickeableArea.tscn" id="3_b5psl"]
+[ext_resource type="Texture2D" uid="uid://21fklwg4p3ci" path="res://images/character images/chicaForward.png" id="3_jct03"]
+[ext_resource type="Texture2D" uid="uid://c86a2mhwhfjv5" path="res://images/location images/Test_Location_2.jpg" id="4_1virx"]
+[ext_resource type="Texture2D" uid="uid://d06fpwhvxbvl0" path="res://images/character images/chicaBigBackHead.png" id="4_rgh6p"]
+[ext_resource type="Texture2D" uid="uid://bfigo50r2l2sq" path="res://images/character images/chicaLeft.png" id="5_c2eah"]
+[ext_resource type="Texture2D" uid="uid://c2rw8i67rv4jh" path="res://images/location images/Test_Location_3.jpg" id="5_dg2r6"]
+[ext_resource type="Texture2D" uid="uid://cdv6iw7t7o5el" path="res://images/location images/Test_Location_4.jpg" id="6_ejred"]
+[ext_resource type="Texture2D" uid="uid://ttyruydevhpi" path="res://images/character images/chicaRight.png" id="6_mhv5k"]
+[ext_resource type="Texture2D" uid="uid://bctmcvbtooq6p" path="res://images/location images/Test_Location_5.jpg" id="7_j2njg"]
+[ext_resource type="PackedScene" uid="uid://c3bbbfehqm5d8" path="res://changeCharButton.tscn" id="8_d74e3"]
+[ext_resource type="Texture2D" uid="uid://clc5voq6mfmrf" path="res://images/character images/chicaCloset.png" id="10_v4ocn"]
+[ext_resource type="Texture2D" uid="uid://cp5syjhw3dxi5" path="res://images/character images/bonnieBigBackHead.png" id="13_6dtw5"]
+[ext_resource type="Texture2D" uid="uid://dckfopcuppox6" path="res://images/character images/bonnieForward.png" id="14_j4vx0"]
+[ext_resource type="Texture2D" uid="uid://dlduu1826wabg" path="res://images/character images/bonnieLeft.png" id="15_sq72t"]
+[ext_resource type="Texture2D" uid="uid://c4o286jk2nxfa" path="res://images/character images/bonnieRight.png" id="16_bwkbt"]
+[ext_resource type="Texture2D" uid="uid://dsad4e3fgtmsm" path="res://images/character images/BonnieCloset.png" id="17_41fip"]
+[ext_resource type="PackedScene" uid="uid://brc8qbhqdviv7" path="res://charMoveTimer.tscn" id="19_r1eda"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_scwfm")
+
+[node name="LocationBonnie1" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(295, 221)
+location = "locationBonnie1"
+ChicaLoc_ChicaSprite = "2;1 1;2 3;3"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationBonnie1" index="0"]
+position = Vector2(-27, -141)
+texture = ExtResource("3_jct03")
+
+[node name="Chica2" parent="LocationBonnie1" index="1"]
+position = Vector2(131, 74)
+texture = ExtResource("4_rgh6p")
+
+[node name="Chica3" parent="LocationBonnie1" index="2"]
+position = Vector2(-92, -90)
+texture = ExtResource("5_c2eah")
+
+[node name="Chica4" parent="LocationBonnie1" index="3"]
+position = Vector2(248, 89)
+texture = ExtResource("6_mhv5k")
+
+[node name="Bonnie1" parent="LocationBonnie1" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationBonnie1" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationBonnie1" index="6"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationBonnie1" instance=ExtResource("3_b5psl")]
+position = Vector2(61, -81)
+scale = Vector2(1.81, 1.375)
+new_location = "locationBonnie2"
+curr_location = "locationBonnie1"
+
+[node name="LocationBonnie2" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(285, 207)
+texture = ExtResource("4_1virx")
+location = "locationBonnie2"
+ChicaLoc_ChicaSprite = "1;1 2;2 3;3"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationBonnie2" index="0"]
+position = Vector2(-105, -135)
+texture = ExtResource("3_jct03")
+
+[node name="Chica2" parent="LocationBonnie2" index="1"]
+position = Vector2(104, 59)
+texture = ExtResource("4_rgh6p")
+
+[node name="Chica3" parent="LocationBonnie2" index="2"]
+position = Vector2(252, 115)
+texture = ExtResource("6_mhv5k")
+
+[node name="Chica4" parent="LocationBonnie2" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationBonnie2" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationBonnie2" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationBonnie2" index="6"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationBonnie2" instance=ExtResource("3_b5psl")]
+position = Vector2(11, -90)
+scale = Vector2(1.89, 1.165)
+new_location = "locationBonnie1"
+curr_location = "locationBonnie2"
+
+[node name="ClickeableArea2" parent="LocationBonnie2" instance=ExtResource("3_b5psl")]
+position = Vector2(269, 106)
+scale = Vector2(0.18, 1)
+new_location = "locationBonnie3"
+curr_location = "locationBonnie2"
+
+[node name="LocationBonnie3" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(308, 205)
+texture = ExtResource("5_dg2r6")
+location = "locationBonnie3"
+ChicaLoc_ChicaSprite = "4;1"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationBonnie3" index="0"]
+position = Vector2(-6, -65)
+texture = ExtResource("10_v4ocn")
+
+[node name="Chica2" parent="LocationBonnie3" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationBonnie3" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationBonnie3" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationBonnie3" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationBonnie3" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationBonnie3" index="6"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationBonnie3" instance=ExtResource("3_b5psl")]
+position = Vector2(-49, -2)
+scale = Vector2(1, 2.13)
+new_location = "locationBonnie4"
+curr_location = "locationBonnie3"
+
+[node name="ClickeableArea2" parent="LocationBonnie3" instance=ExtResource("3_b5psl")]
+position = Vector2(179, -7)
+scale = Vector2(1.19, 2.13)
+new_location = "locationBonnie2"
+curr_location = "locationBonnie3"
+
+[node name="LocationBonnie4" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(315, 220)
+texture = ExtResource("6_ejred")
+location = "locationBonnie4"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationBonnie4" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationBonnie4" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationBonnie4" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationBonnie4" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationBonnie4" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationBonnie4" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationBonnie4" index="6"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationBonnie4" instance=ExtResource("3_b5psl")]
+position = Vector2(-31, -35)
+scale = Vector2(1, 1.64)
+new_location = "locationBonnie5"
+curr_location = "locationBonnie4"
+
+[node name="LocationBonnie5" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(289, 214)
+texture = ExtResource("7_j2njg")
+location = "locationBonnie5"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationBonnie5" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationBonnie5" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationBonnie5" index="2"]
+visible = false
+
+[node name="Bonnie1" parent="LocationBonnie5" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationBonnie5" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationBonnie5" index="6"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationBonnie5" instance=ExtResource("3_b5psl")]
+position = Vector2(105, -5)
+scale = Vector2(0.745, 2.2)
+new_location = "locationBonnie2"
+curr_location = "locationBonnie5"
+
+[node name="ClickeableArea2" parent="LocationBonnie5" instance=ExtResource("3_b5psl")]
+position = Vector2(-132, -6)
+scale = Vector2(1.525, 2.155)
+new_location = "locationBonnie4"
+curr_location = "locationBonnie5"
+
+[node name="LocationChica1" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(302, 223)
+location = "locationChica1"
+ChicaLoc_ChicaSprite = "0;0"
+BonnieLoc_BonnieSprite = "1;1 2;2 3;3"
+
+[node name="Chica1" parent="LocationChica1" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationChica1" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationChica1" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationChica1" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationChica1" index="4"]
+position = Vector2(-199, 23)
+texture = ExtResource("13_6dtw5")
+
+[node name="Bonnie2" parent="LocationChica1" index="5"]
+position = Vector2(175, -126)
+texture = ExtResource("14_j4vx0")
+
+[node name="Bonnie3" parent="LocationChica1" index="6"]
+position = Vector2(-108, -107)
+texture = ExtResource("15_sq72t")
+
+[node name="Bonnie4" parent="LocationChica1" index="7"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationChica1" instance=ExtResource("3_b5psl")]
+position = Vector2(72, -108)
+scale = Vector2(1.805, 1.205)
+new_location = "locationChica2"
+curr_location = "locationChica1"
+
+[node name="LocationChica2" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(285, 205)
+texture = ExtResource("4_1virx")
+location = "locationChica2"
+ChicaLoc_ChicaSprite = "0;0"
+BonnieLoc_BonnieSprite = "1;1 2;2 3;3"
+
+[node name="Chica1" parent="LocationChica2" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationChica2" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationChica2" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationChica2" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationChica2" index="4"]
+visible = false
+position = Vector2(92, -125)
+texture = ExtResource("14_j4vx0")
+
+[node name="Bonnie2" parent="LocationChica2" index="5"]
+visible = false
+position = Vector2(-186, 11)
+texture = ExtResource("13_6dtw5")
+
+[node name="Bonnie3" parent="LocationChica2" index="6"]
+visible = false
+position = Vector2(254, 107)
+texture = ExtResource("16_bwkbt")
+
+[node name="Bonnie4" parent="LocationChica2" index="7"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationChica2" instance=ExtResource("3_b5psl")]
+position = Vector2(4, -93)
+scale = Vector2(1.995, 1)
+new_location = "locationChica1"
+curr_location = "locationChica2"
+
+[node name="ClickeableArea2" parent="LocationChica2" instance=ExtResource("3_b5psl")]
+position = Vector2(269, 109)
+scale = Vector2(0.195, 1)
+new_location = "locationChica3"
+curr_location = "locationChica2"
+
+[node name="LocationChica3" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(308, 204)
+texture = ExtResource("5_dg2r6")
+location = "locationChica3"
+ChicaLoc_ChicaSprite = "0;0"
+BonnieLoc_BonnieSprite = "4;1"
+
+[node name="Chica1" parent="LocationChica3" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationChica3" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationChica3" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationChica3" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationChica3" index="4"]
+position = Vector2(-26, -69)
+texture = ExtResource("17_41fip")
+
+[node name="ClickeableArea" parent="LocationChica3" instance=ExtResource("3_b5psl")]
+position = Vector2(-51, -8)
+scale = Vector2(1, 2.11)
+new_location = "locationChica4"
+curr_location = "locationChica3"
+
+[node name="ClickeableArea2" parent="LocationChica3" instance=ExtResource("3_b5psl")]
+position = Vector2(195, -6)
+scale = Vector2(1, 2.1)
+new_location = "locationChica2"
+curr_location = "locationChica3"
+
+[node name="LocationChica4" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(315, 222)
+texture = ExtResource("6_ejred")
+location = "locationChica4"
+ChicaLoc_ChicaSprite = "0;0"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="ClickeableArea" parent="LocationChica4" instance=ExtResource("3_b5psl")]
+position = Vector2(-33, -30)
+scale = Vector2(1, 1.535)
+new_location = "locationChica5"
+curr_location = "locationChica4"
+
+[node name="LocationChica5" parent="." instance=ExtResource("2_f6v5x")]
+visible = false
+position = Vector2(290, 216)
+texture = ExtResource("7_j2njg")
+location = "locationChica5"
+ChicaLoc_ChicaSprite = "0;0"
+BonnieLoc_BonnieSprite = "0;0"
+
+[node name="Chica1" parent="LocationChica5" index="0"]
+visible = false
+
+[node name="Chica2" parent="LocationChica5" index="1"]
+visible = false
+
+[node name="Chica3" parent="LocationChica5" index="2"]
+visible = false
+
+[node name="Chica4" parent="LocationChica5" index="3"]
+visible = false
+
+[node name="Bonnie1" parent="LocationChica5" index="4"]
+visible = false
+
+[node name="Bonnie2" parent="LocationChica5" index="5"]
+visible = false
+
+[node name="Bonnie3" parent="LocationChica5" index="6"]
+visible = false
+
+[node name="Bonnie4" parent="LocationChica5" index="7"]
+visible = false
+
+[node name="ClickeableArea" parent="LocationChica5" instance=ExtResource("3_b5psl")]
+position = Vector2(107, -3)
+scale = Vector2(0.765, 2.255)
+new_location = "locationChica2"
+curr_location = "locationChica5"
+
+[node name="ClickeableArea2" parent="LocationChica5" instance=ExtResource("3_b5psl")]
+position = Vector2(-157, -4)
+scale = Vector2(1.305, 2.18)
+new_location = "locationChica4"
+curr_location = "locationChica5"
+
+[node name="ChangeToChicaButt" parent="." instance=ExtResource("8_d74e3")]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 59.0
+offset_bottom = 38.0
+
+[node name="ChangeToBonnieButt" parent="." instance=ExtResource("8_d74e3")]
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 128.0
+offset_bottom = 39.0
+text = "Bonnie"
+changeToChar = "Bonnie"
+
+[node name="ChicaMoveTimerUI" parent="." instance=ExtResource("19_r1eda")]
+offset_left = 143.0
+offset_top = 11.0
+offset_right = 277.0
+offset_bottom = 34.0
+char = "Chica"
+cooldownTime = 2
+
+[node name="BonnieMoveTimerUI" parent="." instance=ExtResource("19_r1eda")]
+offset_left = 143.0
+offset_top = 11.0
+offset_right = 277.0
+offset_bottom = 34.0
+cooldownTime = 2
+
+[editable path="LocationBonnie1"]
+[editable path="LocationBonnie2"]
+[editable path="LocationBonnie3"]
+[editable path="LocationBonnie4"]
+[editable path="LocationBonnie5"]
+[editable path="LocationChica1"]
+[editable path="LocationChica2"]
+[editable path="LocationChica3"]
+[editable path="LocationChica4"]
+[editable path="LocationChica5"]

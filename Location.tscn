@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://5pywgxskfnwb"]
+
+[ext_resource type="Texture2D" uid="uid://djsjd5s72c0tw" path="res://images/location images/Test_Location_1.jpg" id="1_mvrfq"]
+[ext_resource type="Script" path="res://LocationStuff.gd" id="2_t3h5t"]
+[ext_resource type="Texture2D" uid="uid://cvwvh0hb8coeq" path="res://images/icon.svg" id="3_wmho6"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_mvrfq")
+script = ExtResource("2_t3h5t")
+
+[node name="Chica1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_wmho6")
+
+[node name="Chica2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_wmho6")
+
+[node name="Chica3" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_wmho6")
+
+[node name="Chica4" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_wmho6")
+
+[node name="Bonnie1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bonnie2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bonnie3" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bonnie4" type="Sprite2D" parent="."]
+unique_name_in_owner = true

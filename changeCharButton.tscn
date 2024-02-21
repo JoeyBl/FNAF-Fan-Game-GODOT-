@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3bbbfehqm5d8"]
+
+[ext_resource type="Script" path="res://ChangeCharButton.gd" id="1_jbhcr"]
+
+[node name="Button" type="Button"]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 63.0
+offset_bottom = 37.0
+text = "Chica"
+script = ExtResource("1_jbhcr")

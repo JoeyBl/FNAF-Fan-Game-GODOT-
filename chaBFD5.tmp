@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://brc8qbhqdviv7"]
+
+[ext_resource type="Script" path="res://charMoveTimer.gd" id="1_pbsn5"]
+
+[node name="Label" type="Label"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Move CoolDown: "
+script = ExtResource("1_pbsn5")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
