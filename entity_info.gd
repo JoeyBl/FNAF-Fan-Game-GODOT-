@@ -1,15 +1,15 @@
 extends Node
 
 
-var charLocations = {"Chica": "locationChica1", "Bonnie":"locationBonnie1"}
+var charLocations = {"Chica": "loc-Chica-1-2", "Bonnie":"loc-Bonnie-1-2"}
 
 var charCanMove = {"Chica": true, "Bonnie":true}
 
 var currentChar = "Bonnie"
 
 #these are locations where two bots can be in them at same time.
-var shared_locations = [["locationBonnie3", "locationBonnie5",\
-	"locationChica3","locationChica5"],["locationChica4","locationBonnie4"]]
+#is just location number
+var shared_locations = [["c", "d"], ["a", "b"], ["e", "f"], ["16"]]
 
 
 

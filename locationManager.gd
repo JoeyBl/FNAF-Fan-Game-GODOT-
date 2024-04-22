@@ -6,11 +6,10 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#assigning start location. 
-	for loc in ["locationBonnie1","locationBonnie2","locationBonnie3",\
-	"locationBonnie4","locationBonnie5"]:
-		Signals.dissable_location.emit(loc)
-	Signals.enable_location.emit("locationBonnie1")
+	#assigning start location.  (I've gotten rid of this, as can just do in the editor)
+	#for loc in ["list of location names"]:
+	#	Signals.dissable_location.emit(loc)
+	#Signals.enable_location.emit("locationBonnie1")
 	
 	#signal for if change of location occurs
 	Signals.move_animatronic.connect(move_animatronic_fn)

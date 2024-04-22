@@ -45,7 +45,7 @@ func enable_location_fn(new):
 
 		
 func dissable_char_sprites():
-	for i in range(1,5):
+	for i in range(1,6):
 		get_node("%Chica"+str(i)).hide()
 		get_node("%Bonnie"+str(i)).hide()
 	
@@ -63,15 +63,17 @@ func _process(delta):
 		
 	#for bonnie and chica, this sets to show the sprite containing the bot in
 	#the given location that the bot should be at
+	#note, chica loc and bonnie loc is just last part of loc (ie the exact loc
+	#name, no room. room is just there for help with other ais i think)
 	for pair in ChicaLoc_ChicaSprite.split(" "):
-		var chica_loc = "locationChica" + pair.split(";")[0]
+		var chica_loc = pair.split(";")[0] #gets loc name
 		var chica_sprite = "%Chica" + pair.split(";")[1]
-		if entity_info.charLocations["Chica"] == chica_loc:
+		if entity_info.charLocations["Chica"].split("-")[3] == chica_loc:
 			get_node(chica_sprite).show()
 	for pair in BonnieLoc_BonnieSprite.split(" "):
-		var bonnie_loc = "locationBonnie" + pair.split(";")[0]
+		var bonnie_loc = pair.split(";")[0]
 		var bonnie_sprite = "%Bonnie" + pair.split(";")[1]
-		if entity_info.charLocations["Bonnie"] == bonnie_loc:
+		if entity_info.charLocations["Bonnie"].split("-")[3] == bonnie_loc:
 			get_node(bonnie_sprite).show()
 			
 		

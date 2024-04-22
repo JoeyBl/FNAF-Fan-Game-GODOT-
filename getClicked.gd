@@ -1,7 +1,8 @@
 extends Area2D
 
 @export var new_location = "location2"
-@export var curr_location = "location1"
+var curr_location = "temp cause gets from parent"
+
 
 var mouse_was_pressed = false
 var mouse_in_area = false
@@ -17,6 +18,11 @@ func _ready():
 	Signals.dissable_location.connect(dissable_location_fn)
 	Signals.enable_location.connect(enable_location_fn)
 	get_node("%GlowSprite").hide() #hides it initially
+	
+	curr_location = get_parent().location
+	#so curr location is got from the parent node, as this
+	#is attached to the clickiable areas which are all children
+	#to a location, and location has locartion var
 	
 
 	
@@ -51,10 +57,12 @@ func _process(delta):
 		var shared_locations_check = []
 		for i in range(len(entity_info.shared_locations)): #getting if new_location
 						#has any shared locations
-			if new_location in entity_info.shared_locations[i]:
+			if new_location.split("-")[3] in entity_info.shared_locations[i]:
 				shared_locations_check = entity_info.shared_locations[i]
-		if not(entity_info.charLocations["Chica"] in shared_locations_check)\
-		  and not(entity_info.charLocations["Bonnie"] in shared_locations_check):
+		if not(entity_info.charLocations["Chica"].split("-")[3] \
+				in shared_locations_check)\
+		  and not(entity_info.charLocations["Bonnie"].split("-")[3] \
+				in shared_locations_check):
 			#if bot locations not in the shared locations, it does the move
 			Signals.move_animatronic.emit(curr_location, new_location)
 		

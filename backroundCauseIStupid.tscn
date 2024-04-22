@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31p3bk3rk1ee"]
+
+[ext_resource type="Texture2D" uid="uid://d15jnwdudh3ee" path="res://images/BackroundCauseIStupid.png" id="1_5jp12"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(-1, 1)
+texture = ExtResource("1_5jp12")
